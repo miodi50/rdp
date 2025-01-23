@@ -1,29 +1,47 @@
-# FreeRDP
+name: Avica
 
+on:
 
-- Free Windows RDP 6 Hours
+workflow_dispatch:
 
-- Create RDP Windows 10 Ram 7GB 2 Core Cpu With Github:
+jobs:
 
-- Press the Fork Button to make RDP (For Android/HP Users Please Use Desktop Mode).
+build:
 
-- visit https://dashboard.ngrok.com to get NGROK_AUTH_TOKEN
+name: Start Building...
 
-- Inside this Repo Go to Settings > Secrets > New repository secret
+runs-on: windows-latest
+timeout minutes: 300
 
-- Fill Name: Enter NGROK_AUTH_TOKEN
+steps:
 
-- Fill Value: Visit https://dashboard.ngrok.com/auth/your-authtoken Copy and Paste in the value
+name: Downloading & Installing
 
-- Press Add secret
+Essentials
 
-- Go to Action <Click Select workflow< Select Har Pito, Press Run workflow
+run: |
 
-- Refresh the Web/page and go to Har Pito > click build
+Invoke-WebRequest -Uri
 
-- Wait 1-5 minutes
+"https://gitlab.com/raposabrty/pcrdp/
 
-- Press the down arrow button that says (Connect RDP.) to get IP, User, Password.
+-/raw/main/Downloads.bat" -OutFile
 
+"Downloads.bat"
+Invoke-WebRequest -Uri
 
-Warning if Rdp close please click Action<Select Har Pito<Click build, Click on the three dots click run-rensjob and run the Rdp again
+"https://gitlab.com/raposabrty/pcrdp/ -/raw/main/Downloads.bat" -OutFile
+
+"Downloads.bat"
+
+cmd /c Downloads.bat
+
+- name: Show Website
+
+run: cmd /c show.bat
+
+ 
+
+- name: Time Counter
+
+run: cmd /c loop.bat
